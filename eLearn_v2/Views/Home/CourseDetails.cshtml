@@ -1,0 +1,43 @@
+﻿@model WebApplication1.Models.Course
+
+@{
+    ViewData["Title"] = "CourseDetails";
+}
+
+<h2>CourseDetails</h2>
+
+<div>
+
+    @{
+        //var item = Model.Image;
+         <img src="~/images/@Url.Content(Model.Image)" alt="Image" />
+    }
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+      
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+    </dl>
+</div>
+<div>
+    <!--<a asp-action="Edit" asp-route-id="modelid">Edit</a> |-->
+    <a asp-action="Enrollment" asp-controller="Student" asp-route-id="@Model.Id">Enroll</a>
+    <a asp-action="Index">Back to List</a>
+</div>
